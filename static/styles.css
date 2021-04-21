@@ -1,0 +1,172 @@
+h1{
+    margin: 3% 10% 0 10%;
+    text-align: center;
+    font-family: 'Cedarville Cursive', cursive;
+    color: rgb(49, 0, 0);
+    text-shadow: 1px 1px rgb(255, 200, 200);
+    font-size: 4vh;
+}
+
+h3{
+    font-family: 'Cedarville Cursive', cursive;
+    text-align: center;
+    margin: 1% auto 3% auto;
+    padding-top: 2%;
+    z-index:9;
+    line-height: 130%;
+    color: rgb(49, 0, 0)
+}
+
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.event-details{
+    margin: 1% auto 3% auto;
+    text-align: center;
+    background-color: rgb(255, 255, 255, 0.4);
+    width: 70%;
+    padding-bottom: 2%;
+}
+
+.event-date, .event-url{
+    display: block;
+    margin: 1% auto;
+    padding-bottom: 3%;
+    font-size: 2vh;
+    width: 50%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.event-url:hover{
+    /* font-weight: bold; */
+    opacity: 0.5;
+}
+
+.page{
+    animation-fill-mode: forwards;
+    animation-duration: 0.6s;
+    position: absolute;
+    /* background-image: url('images/bg_4.jpg'); */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 20vh;
+    
+}
+
+#pg1{
+    /* background-color: rgb(223, 223, 223); */
+    background-image: url('../images/bg_4.jpg');
+    display: none;
+    width: 100%;
+    /* height: 100%; */
+
+}
+
+#pg2{
+    /* background-color: rgb(216, 216, 216); */
+    background-image: url('../images/bg_4.jpg');
+    width: 100%;
+    /* height: 100%; */
+    display: block;
+}
+
+#pg3{
+    background-image: url('../images/bg_4.jpg');
+    width: 100%;
+    /* height: 100%; */
+    display: none;
+}
+
+.arrow-btn{
+    position: fixed;
+    opacity: 0.5;
+    height: 100%;
+    z-index:8;
+}
+
+
+.l-arrow{
+    left: 0%;
+    width: 4.5vh;
+}
+
+.r-arrow{
+    right: 0%;
+    width: 4.5vh;
+}
+
+.arrow {
+    border: solid rgb(2, 0, 0);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2vh;
+    z-index:99;
+}
+
+.arrow:hover{
+    padding: 2.1vh;
+}
+
+.l-arrowmover{
+    position: absolute;
+    top:50%;
+    left: 1.4vh;
+}
+
+.r-arrowmover{
+    position: absolute;
+    top:50%;
+    right: 1.4vh;
+}
+
+.arrow-btn:hover{
+    background-color: white;
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.arrow-btn:active{
+    opacity: 0.1;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+  
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.faqbox{
+    margin: 3% auto;
+    width: 70%;
+    font-size: 2.5vh;
+    text-align: center;
+}
+
+@keyframes fadetoleft {
+    0%   {left:0%; }
+    100%  {left: -100%;}
+  }
+
+@keyframes enterfromleft {
+    0%   {left:-100%;}
+    100% {left: 0vw; }
+  }
+
+@keyframes fadetoright {
+    0%   {right:0vw; }
+    100% {right:-100vw; }
+  }
+
+@keyframes enterfromright {
+    0%   {right:-100vw; }
+    100% {right: 0vw; }
+  }

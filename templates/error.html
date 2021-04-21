@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #returnbtn{
+            display: block;
+            margin: 6% auto 20%;
+            border: none;
+            width: 20vh;
+            height: 4vh;
+            font-size: 3vh;
+            text-align: center;
+            font-family: 'Satisfy', cursive;
+            border-radius: 10px;
+            opacity: 0.6;
+            background-color: rgba(180, 180, 180, 0);
+        }
+
+        #returnbtn:hover {
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 0.65;
+        }
+
+        #returnbtn:active {        
+            background-color: white;
+            opacity: 0.7;
+        }
+
+            
+    </style>
+
+    <script src="https://use.fontawesome.com/6699a8eea0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js" integrity="sha256-2JRzNxMJiS0aHOJjG+liqsEOuBb6++9cY4dSOyiijX4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='rsvpstyle.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Cedarville+Cursive|Dancing+Script|Quattrocento+Sans|Parisienne|Satisfy|Slabo+27px&display=swap">
+</head>
+
+<body>
+    <div id='pg2' class='page' style='height:100%;'>
+        <h1> <i class='fas fa-book-open fa-2x'></i></h1>
+        <div class='event-details'>
+            <h3 style='font-size:4vh; opacity:1;'>Bry and Rach's Wedding</h3>
+            <p style="font-family: 'Open Sans';" class='event-date'> Something Went Wrong! :(</p>
+        </div>
+
+        <button id='returnbtn' type="button" onclick="window.location.href='{{ url_for( 'home' ) }}';">Try Again</button>
+        
+    </div>
+    
+</body>
+</html>
+
+<script>
+ 
+</script>

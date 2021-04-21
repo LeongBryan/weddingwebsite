@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://use.fontawesome.com/6699a8eea0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js" integrity="sha256-2JRzNxMJiS0aHOJjG+liqsEOuBb6++9cY4dSOyiijX4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='rsvpstyle.css') }}">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='photowallstyle.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Cedarville+Cursive|Dancing+Script|Quattrocento+Sans|Parisienne|Satisfy|Slabo+27px&display=swap">
+</head>
+
+<body>
+    <div id='pg1' class='page'>
+        <h1><i class="fas fa-camera fa-2x"></i></h1>
+        <!-- Photo Grid -->
+        <div class="row"> 
+            <div class="column">
+                <img src="{{ url_for('static', filename='images/gallery_01.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_04.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_07.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_10.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_13.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_16.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_19.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_21.jpg') }}" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="{{ url_for('static', filename='images/gallery_02.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_05.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_08.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_11.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_14.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_17.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_20.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_23.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_27.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_26.jpg') }}" style="width:100%">
+            </div>  
+            <div class="column">
+                <img src="{{ url_for('static', filename='images/gallery_06.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_24.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_25.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_18.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_15.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_12.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_09.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_22.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_03.jpg') }}" style="width:100%">
+            </div>
+            <!-- <div class="column">
+                <img src="{{ url_for('static', filename='images/gallery_41.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_45.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_57.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_65.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_69.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_72.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_45.jpg') }}" style="width:100%">
+                <img src="{{ url_for('static', filename='images/gallery_57.jpg') }}" style="width:100%">
+            </div>   -->
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+        
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+        
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+  
+    </div>
+
+
+    <div id='pg2' class='page'>
+        <h1> <i class='fas fa-book-open fa-2x'></i></h1>
+        <div class='event-details'>
+            <h3 style='font-size:4vh; opacity:1;'>Bry and Rach's Wedding</h3>
+            <p class='event-date'>12 Dec 2020, Saturday, 10:45am</p>
+            <a href=https://youtu.be/b9F5c4f8QQ8 class='event-url'>Click here for event link</a>
+        </div>
+        
+        <div class="inputarea">
+            <form id='submissionform' action="{{ url_for('post') }}" onsubmit="return validateForm()" method="post">
+                <p class="rsvp-info">You are invited to attend our wedding online!<br> 
+                    RSVP here so we can send you details of the livestream nearer the date.</p>
+                <select id="attendanceselect" name="Attendance" class="rsvp" onchange="toggleattendance(this)">
+                    <!-- <optgroup label = "Are you Coming?">Coming?</optgroup> -->
+                    <!-- <option value="" selected hidden>Coming?</option> -->
+                    <option value="">Will you be tuning in?*</option>
+                    <option value="yes">Yep!</option>
+                    <option value="no">Nope</option>
+                </select>
+
+                <input type='text' id="weddingfriendname" name="Name" class="name"
+                    placeholder=" Full Name*">
+                <input type='text' id="weddingfriendemail" name="Email" class="name" placeholder=" Email*">
+                <div class="required"> *Required</div>
+
+                <p id="zoom-info" class="rsvp-info">Online weddings are so much better with watch parties! <br>
+                    We would encourage you to host your own watch parties, but in any case we'll be hosting zoom breakout rooms, so just tell us how you know us and we'll sort you into rooms as you enter our meeting.</p>
+
+                <select id="affiliationselect" name="Affiliation" class="name">
+                    <option value="" selected hidden>How do you know us?</option>
+                    <option value="Church">Church</option>
+                    <option value="Leong Family">Leong Family</option>
+                    <option value="Ker Family">Ker Family</option>
+                    <option value="NJC">NJC</option>
+                    <option value="VJC">VJC</option>
+                    <option value="Social Work">Social Work</option>
+                    <option value="Sociology">Sociology</option>
+                    <option value="UChicago">Chicago Friends</option>
+                    <option value="USP">USP</option>
+                    <option value="Volunteering">Volunteering</option>
+                    <option value="Rach Colleagues">Rachel's Colleagues</option>
+                    <option value="Bry Colleagues">Bryan's Colleagues</option>
+                    <option value="Others">Others (You can specify below!)</option>
+                    </select>                        
+                <input type='text' id="anythingelse" name="AnythingElse" class="name"
+                    placeholder=" Anything else?">
+                <!-- <input type="submit" onclick=loadsubmitted() display='none' class='submitbtn'> -->
+                <input type="submit" display='none' class='submitbtn'>
+            </form>
+
+        </div>
+    </div>
+
+    <div id='pg3' class='page'>
+        <h1><i class='fas fa-question-circle fa-2x'></i></h1>
+
+        <div class='faqbox'>
+            <h4>How do the zoom groups work again?</h4>
+            <div class='faqans'>
+                These are entirely optional. If you want to hang out virtually with other people from your selected group but don't intend to physically meet, we'll host the room, and put you into breakout rooms as you join. Sorry we won't be able to hop across all the rooms! But we hope this option makes it more fun watching the live stream together (:<br>
+                We will be sharing the zoom meeting link (which is different from the youtube stream link) via email closer to the wedding (so do sign up with your real email!)
+            </div>
+        </div>
+
+        <div class='faqbox'>
+            <h4>I want to get you guys a present, what do you want? (I won't take no for answer!)</h4>
+            <div class='faqans'>
+                We are so incredibly fortunate to have friends ask this question! Thank you! We've come up with a list of things that are both useful and will spark joy in our lives! Go ahead and have a look at our wishlist, but please write your names down in there so no item is overbought.
+                <a href=https://docs.google.com/spreadsheets/d/1WYOvXdZ1I1_5Lvfxe6HJ8vJYUfyLRfwQIyLT2Ugj_NI/edit#gid=0 class='event-url'>Click here for wishlist</a> 
+            </div>
+        </div>
+
+        <div class='faqbox'>
+            <h4>How do I join the live stream?</h4>
+            <div class='faqans'>
+                All you need is an internet connection and access to Youtube.              
+                <a href=https://youtu.be/b9F5c4f8QQ8 class='event-url'>Click here for the event link.</a> 
+                We'll also send it out via email (so do sign up with your real email!)
+            </div>
+        </div>
+
+        <div class='faqbox'>
+            <h4>How will photo-taking be done?</h4>
+            <div class='faqans'>
+                Ok so we really need your help to do this otherwise we won't have any wedding photos with you :O During the photo-taking segment, we the couple will smile at the camera for an awkward and still 60 seconds for virtual phototaking. <br>
+                For folks in the breakout rooms, this is when you share the screen of our live stream and take a screenshot with the people in your room.
+                For other folks who are physically gathered, you can huddle around the screen and take a photo of yourselves with us!
+                And if you're on your own, do take a selfie with your laptop! <br>
+                <br>
+                Once done, please send us the photos on Telegram, or email at: bryrachrsvp@gmail.com. Spare no pixel when it comes to resolution! Thanks!
+            </div>
+        </div>
+
+        <div class='faqbox'>
+            <h4>How long is the event?</h4>
+            <div class='faqans'>
+                It'll be an hour long, we think.
+            </div>
+        </div>
+
+        <div class='faqbox'>
+            <h4>How did you manage to narrow down the 50 guests? Was it difficult?</h4>
+            <div class='faqans'>
+                It was a series of extremely painful decisions, please don't ask again :(
+            </div>
+        </div>
+
+        <div class='faqbox'>
+            <h4>I know the venue. What if I show up in person anyway?</h4>
+            <div class='faqans'>
+                We honestly don't know how we'll react.
+            </div>
+        </div>
+
+        <div class='faqbox'>
+            <h4>Bry loves music so much.. do the two of you make music together?</h4>
+            <div class='faqans'>
+                Yeap. Rach can play the ukulele, and we can play 'Somewhere Over The Rainbow' with a reasonable number of mistakes. We can also play Hillsong's 'What A Beautiful Name' on the piano together.
+            </div>
+        </div>
+
+        <div class='faqbox'>
+            <h4>I see all those fairy lights in your photos and I like them. Can I have them?</h4>
+            <div class='faqans'>
+                Yep! The lights (started with 150m) have been lent to over 7 different friends and something like 70% of the lights still work just fine. We're definitely happy to lend them to our friends, especially for proposals!
+            </div>
+        </div>
+
+        <div class='faqbox'>
+            <h4>Are these really 'frequently' asked questions...?</h4>
+            <div class='faqans'>
+                You'd be suprised, they actually are! 
+            </div>
+        </div>
+    </div>
+
+    <div class='l-arrow arrow-btn' onclick="leftArrow()"> </div>
+    <div class='r-arrow arrow-btn' onclick="rightArrow()"> </div>
+    <div class='l-arrowmover'><i class="arrow left"></i></div>
+    <div class='r-arrowmover'><i class="arrow right"></i></div>
+    
+</body>
+</html>
+
+<script>
+    var page1 = document.getElementById('pg1')
+    var page2 = document.getElementById('pg2')
+    var page3 = document.getElementById('pg3')
+    
+    var pages = [page1, page2, page3]
+    
+    var currentPageIndex=1
+    var currentPage
+    var nextPage
+    var remainder
+
+    //TODO: dot animation
+
+    //TODO: create array of all 3 pages
+
+    function rightArrow()
+    {   
+        currentPage=pages[currentPageIndex]
+        nextPage=pages[(currentPageIndex+1)%3]
+        nextPage.style.display='block'
+        currentPage.style.animationName='fadetoleft';
+
+        var reveal = function (){
+            this.style.display="none"
+            this.removeEventListener('animationend', reveal, false)
+        }
+
+        currentPage.addEventListener('animationend', reveal, false
+        )
+
+        nextPage.addEventListener('animationstart', function (){
+            this.style.display='block'}, false
+        )
+        nextPage.style.animationName='enterfromright';
+        
+        currentPageIndex = (currentPageIndex + 1) %3
+
+
+    }
+
+    
+    function leftArrow()
+    {
+        currentPage=pages[currentPageIndex]
+        nextPage=pages[(currentPageIndex-1 + 3)%3]
+        nextPage.style.display='block';
+        currentPage.style.animationName='fadetoright';
+
+        var reveal = function (){
+            this.style.display="none"
+            this.removeEventListener('animationend', reveal, false)
+        }
+
+        currentPage.addEventListener('animationend', reveal, false
+        )
+
+        nextPage.addEventListener('animationstart', function (){
+            this.style.display='block'}, false
+        )
+        nextPage.style.animationName='enterfromleft';
+
+        currentPageIndex = (currentPageIndex - 1 + 3) %3
+
+    }
+
+    // image modals 
+    var allImages = document.getElementsByTagName('img'); 
+    for(var i = 0; i < allImages.length; i++) {
+        allImages[i].onclick = function(){
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = this
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            }
+        }
+
+    // // Get the <span> element that closes the modal
+    // var span = document.getElementsByClassName("close")[0];
+    
+    // // When the user clicks on <span> (x), close the modal
+    // span.onclick = function() {
+    // document.getElementById("myModal").style.display = "none";
+    // }
+
+    document.body.addEventListener('click', function() {
+        document.getElementById("myModal").style.display = "none";}, true); 
+
+    function toggleattendance(select){
+        if (select.value=="yes" | select.value=="unselected"){
+            document.getElementById('weddingfriendemail').style.display = 'block';
+            document.getElementById('affiliationselect').style.display = 'block';
+            document.getElementById('zoom-info').style.display = 'block';
+        } else {
+            document.getElementById('weddingfriendemail').style.display = 'none';
+            document.getElementById('affiliationselect').style.display = 'none';
+            document.getElementById('zoom-info').style.display = 'none';
+        }
+    }
+
+
+
+    function validateForm() {
+        var name = document.getElementById("weddingfriendname").value;
+        var varattendance = document.getElementById("attendanceselect").value;
+        var varemail = document.getElementById("weddingfriendemail").value;
+
+        if (varattendance == "") {
+            alert("Please let us know if you're coming - we'll miss you!")
+            // swal.fire({
+            // customClass:{title:'swal-title', content:'swal-text'},
+            // icon:'warning',
+            // title:'Incomplete Form',
+            // text:"Please let us know if you're coming - we'll miss you!"})
+            return false
+        }
+
+        else if (name == "") {
+            alert("Please let us know who you are!")
+            // swal.fire({
+            // customClass:{title:'swal-title', content:'swal-text'},
+            // icon:'warning',
+            // title:'Incomplete Form',
+            // text:"Please let us know who you are!"})
+            // document.getElementById("weddingfriendname").placeholder = "  Full Name, Please?"
+            return false
+        }
+
+        else if (varattendance == "yes" & varemail == "") {
+            alert("Email please! We just want to share details of the wedding!")
+            // swal.fire({
+            // customClass:{title:'swal-title', content:'swal-text'},
+            // icon:'warning',
+            // title:'Incomplete Form',
+            // text:"We promise not to sell your email to advertisers!"})
+            // document.getElementById("weddingfriendemail").placeholder = "  Email, Please?"
+            return false
+        }
+
+        else if (varattendance == "yes" & (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(varemail)))) {
+            alert("You have entered an invalid email address!")
+            // swal.fire({
+            // customClass:{title:'swal-title', content:'swal-text'},
+            // icon:'warning',
+            // title:'Incomplete Form',
+            // text:"You have entered an invalid email address!"})
+            // document.getElementById("weddingfriendemail").placeholder = "  A Valid Email, Please?"
+            return false
+        }
+
+        else {
+            document.querySelector("#submissionform").addEventListener("submit",
+                function (e) {
+                    e.preventDefault();    //stop form from submitting
+                    // google.script.run.doPost(this);
+                }
+            );
+
+        };
+    }
+
+    // document.querySelector("#submissionform").addEventListener("submit",
+    //     function (e) {
+    //         e.preventDefault();    //stop form from submitting
+    //     }
+    // );
+    
+</script>
