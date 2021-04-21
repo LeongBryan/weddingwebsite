@@ -4,7 +4,7 @@ We built this site to let our friends and guests RSVP online. It was a COVID wed
 **Things to note**:
 <br>
 - The /static/images folder is empty, but anyone can populate them with the filenames *'gallery_01.jpg'*, *'gallery_02.jpg'*... *gallery_27.jpg* easily.
-- config.ini is where the credentials were kept.
+- *config.ini* is where the credentials were kept.
 
 
 To run:
