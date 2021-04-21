@@ -1,4 +1,4 @@
-# weddingwebsite
+# Wedding Website
 We built this site to let our friends and guests RSVP online. It was a COVID wedding, so we needed to communicate how they should tune in, how we would do photo taking, etc. We eventually hosted it on GCP using the trial credits.
 
 **Things to note**:
